@@ -278,5 +278,35 @@ namespace Arrays
                 }
             }
         }
+
+        static void Array32()
+        {
+            int[] a = { 2, 6, 3, 6, 9, 5, 7, 4, 2, 4, 6 };
+            int count = 0, i = 1;
+            while (count < 1)
+            {
+                if(a[i]<a[i+1] && a[i] < a[i - 1])
+                {
+                    count++;
+                }
+                i++;
+            }
+            Console.WriteLine(i--);
+        }
+
+        static void Array33()
+        {
+            int[] a = { 2, 6, 3, 6, 9, 5, 7, 4, 2, 4, 6 };
+            int count = 0, i = a.Length-1;
+            while (count < 1)
+            {
+                if (a[i] > a[i + 1] && a[i] > a[i - 1])
+                {
+                    count++;
+                }
+                i--;
+            }
+            Console.WriteLine(i++);
+        }
     }
 }

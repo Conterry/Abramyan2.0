@@ -167,5 +167,116 @@ namespace Arrays
                 Console.WriteLine(i);
             }
         }
+//==============================================
+        static void Array27()
+        {
+            int[] a = { 3, -1, 5, -5, 6, -1, 6 };
+            int i = 1;
+            while (Proverka(a[i-1], a[i]))
+            {
+                i++;
+            }
+
+            if (i > a.Length)
+            {
+                Console.WriteLine(0);
+            }
+            else
+            {
+                Console.WriteLine(a[i]);
+            }
+
+        }
+
+        static bool Proverka(int a, int b)
+        {
+            a *= -1;
+            return a * b > 0;
+        }
+//=============================================
+
+        static void Array28()
+        {
+            int[] a = { 2, 6, 3, 6, 7, 2, 1, 7, 9, 4, 3 };
+            int min=a[0];
+            if (a.Length % 2 == 0)
+            {
+                for (int i = 0; i < a.Length; i += 2)
+                {
+                    if (a[i] < min)
+                    {
+                        min = a[i];
+                    }
+                }
+                Console.WriteLine(min);
+            }
+            else
+            {
+                for (int i = 0; i < a.Length-1; i += 2)
+                {
+                    if (a[i] < min)
+                    {
+                        min = a[i];
+                    }
+                }
+                Console.WriteLine(min);
+            }
+        }
+
+        static void Array29()
+        {
+            int[] a = { 2, 6, 3, 6, 7, 2, 1, 7, 9, 4, 3 };
+            int min = a[0];
+            if (a.Length % 2 == 0)
+            {
+                for (int i = 1; i < a.Length-1; i += 2)
+                {
+                    if (a[i] < min)
+                    {
+                        min = a[i];
+                    }
+                }
+                Console.WriteLine(min);
+            }
+            else
+            {
+                for (int i = 1; i < a.Length - 2; i += 2)
+                {
+                    if (a[i] < min)
+                    {
+                        min = a[i];
+                    }
+                }
+                Console.WriteLine(min);
+            }
+        }
+
+        static void Array30()
+        {
+            int[] a = { 2, 8, 3, 8, 3, 7, 4, 7, 9, 4, 2, 5, 7, 3, 6, 3, 2, 6, 7, 3, 2, };
+            int count = 0;
+            for(int i=0; i<a.Length-1; i++)
+            {
+                if (a[i] > a[i + 1])
+                {
+                    count++;
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        static void Array31()
+        {
+            int[] a = { 2, 8, 3, 8, 3, 7, 4, 7, 9, 4, 2, 5, 7, 3, 6, 3, 2, 6, 7, 3, 2, };
+            int count = 0;
+            for (int i = a.Length; i > 1; i--)
+            {
+                if (a[i] > a[i - 1])
+                {
+                    count++;
+                    Console.WriteLine(i);
+                }
+            }
+        }
     }
 }

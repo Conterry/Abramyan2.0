@@ -308,5 +308,76 @@ namespace Arrays
             }
             Console.WriteLine(i++);
         }
+
+        static void Array34()
+        {
+            int[] a = { 4, 7, 2, 15, 8, 2, 68, 4, 8, 3, 57 };
+            int max = a[1];
+            for(int i=1; i<a.Length-1; i++)
+            {
+                if (a[i] < a[i - 1] && a[i] < a[i + 1])
+                {
+                    if (a[i] > max)
+                    {
+                        max = a[i];
+                    }
+                }
+            }
+            Console.WriteLine(max);
+        }
+
+        static void Array35()
+        {
+            int[] a = { 4, 7, 2, 15, 8, 2, 68, 4, 8, 3, 57 };
+            int min = a[1];
+            for (int i = 1; i < a.Length - 1; i++)
+            {
+                if (a[i] > a[i - 1] && a[i] > a[i + 1])
+                {
+                    if (a[i] < min)
+                    {
+                        min = a[i];
+                    }
+                }
+            }
+            Console.WriteLine(min);
+        }
+
+        //=========================================================================
+        static void Array36()
+        {
+            int[] a = { 4, 7, 2, 15, 8, 2, 68, 4, 8, 3, 57 };
+            int max = a[1];
+
+            for (int i = 1; i < a.Length - 1; i++)
+            {
+                if (!LocalMin(a[i-1], a[i], a[i+1]) && !LocalMax(a[i - 1], a[i], a[i + 1]))
+                {
+                    if (max < a[i])
+                    {
+                        max = a[i];
+                    }
+                }
+            }
+            Console.WriteLine(max);
+
+        }
+
+        static bool LocalMin(int a, int b, int c)
+        {
+            return b < a && b < c;
+        }
+
+
+        static bool LocalMax(int a, int b, int c)
+        {
+            return b > a && b > c;
+        }
+        
+        //=============================================================
+
+
+
+
     }
 }

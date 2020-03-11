@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            Array26();
+            Array37();
         }
 
         static void Array18()
@@ -377,6 +377,22 @@ namespace Arrays
         //=============================================================
 
 
+        static void Array37()
+        {
+            int[] a = { 3, 5, 2, 6, 9, 1, 2, 1 };
+            int i = 0;
+            int count = 0;
+            while (i < a.Length)
+            {
+                while (a[i] < a[i + 1])
+                {
+                    i++;
+                }
+                count++;
+            }
+
+            Console.WriteLine(count);
+        }
 
 
     }

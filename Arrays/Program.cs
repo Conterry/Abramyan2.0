@@ -394,6 +394,91 @@ namespace Arrays
             Console.WriteLine(count);
         }
 
+        static void Array38()
+        {
+            int[] a = { 3, 5, 2, 6, 9, 1, 2, 1 };
+            int i = 0;
+            int count = 0;
+            while (i < a.Length)
+            {
+                while (a[i] > a[i + 1])
+                {
+                    i++;
+                }
+                count++;
+            }
+
+            Console.WriteLine(count);
+        }
+
+        static void Array39()
+        {
+            int[] a = { 3, 5, 2, 6, 9, 1, 2, 1 };
+            int i = 0;
+            int count = 0;
+            while (i < a.Length)
+            {
+                while (a[i] > a[i + 1] && a[i] < a[i + 1])
+                {
+                    i++;
+                }
+                count++;
+            }
+
+            Console.WriteLine(count);
+        }
+
+        static void Array40()
+        {
+            int[] a = { 3, 7, 8, 4, 2, 5, 8, 2, 0, 354, 3, 6, 8 };
+            int k = 5;
+            int CountK = Math.Abs(k-a[0]);
+            for(int i=1; i<a.Length; i++)
+            {
+                if (Math.Abs(k - a[i]) < CountK)
+                {
+                    CountK = Math.Abs(k - a[i]);
+                }
+            }
+            Console.WriteLine(CountK);
+        }
+
+        static void Array41()
+        {
+            int[] a = { 4, 7, 3, 5, 7, 4, 6, 8, 0, 8, 6, 3, 1, 4, 6 };
+            int max = 0, imax1 = 0, imax2 = 0;
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                if(a[i] + a[i+1] > max)
+                {
+                    imax1 = i;
+                    imax2 = i + 1;
+                    max = a[i] + a[i + 1];
+                }
+            }
+            Console.WriteLine(imax1);
+            Console.WriteLine(imax2 + 1);
+        }
+
+        static void Array42()
+        {
+            int[] a = { 3, 7, 8, 4, 2, 5, 8, 2, 0, 354, 3, 6, 8 };
+            int k = 5, imax = 1;
+            int CountK = Math.Abs(k - a[0]);
+            for (int i = 1; i < a.Length-1; i++)
+            {
+                if (Math.Abs(k - (a[i] + a[i+1])) < CountK)
+                {
+                    CountK = Math.Abs(k - (a[i] + a[i + 1]));
+                    imax = i;
+                }
+            }
+            Console.WriteLine(imax);
+            Console.WriteLine(imax+1);
+        }
+
+
+
 
     }
 }

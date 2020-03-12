@@ -462,7 +462,7 @@ namespace Arrays
 
         static void Array42()
         {
-            int[] a = { 3, 7, 8, 4, 2, 5, 8, 2, 0, 354, 3, 6, 8 };
+            int[] a = { 3, 7, 8, 4, 2, 5, 8, 2, 0, 9, 3, 6, 8 };
             int k = 5, imax = 1;
             int CountK = Math.Abs(k - a[0]);
             for (int i = 1; i < a.Length - 1; i++)

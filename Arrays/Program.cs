@@ -521,5 +521,68 @@ namespace Arrays
             }
         }
 
+
+        static void Array47()
+        {
+            int[] a = { 2, 3, 4, 5, 6, 7, 8, 11 };
+            int n = 1;
+            for(int i=0; i<a.Length; i++)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    if (a[i] != a[j])
+                    {
+                        n++;
+                    }
+                }
+            }
+            Console.WriteLine(n);
+        }
+
+
+        static void Array48()
+        {
+            int[] a = { 2, 3, 4, 5, 6, 7, 8, 11 };
+            int n = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (a[i] == a[j])
+                    {
+                        n++;
+                    }
+                }
+            }
+            Console.WriteLine(n);
+        }
+
+        static void Array49()
+        {
+            int[] a = { 2, 3, 4, 5, 6, 7, 8, 11 };
+            int n = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (a[i] == a[j])
+                    {
+                        n++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(j);
+                        break;
+                    }
+                }
+            }
+            if (n == a.Length)
+            {
+                Console.WriteLine(0);
+            }
+        }
+
+
+            
     }
 }

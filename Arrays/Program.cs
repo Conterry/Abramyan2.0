@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            Array37();
+            Array54();
         }
 
         static void Array18()
@@ -609,6 +609,7 @@ namespace Arrays
             int[] b = new int[a.Length];
             for(int i=0; i<a.Length; i++)
             {
+                // a[i] = (a[i]<5? a*a[i]; a[i]/2)
                 if (a[i] < 5)
                     b[i] = 2 * a[i];
                 else
@@ -618,6 +619,47 @@ namespace Arrays
 
         }
 
+        static void Array53()
+        {
+            int[] a = { 2, 4, 7, 3, 5, 8, 3 };
+            int[] b = { 6, 2, 4, 8, 3, 7, 7 };
+            int[] c = new int[a.Length];
+            for(int i=0; i<a.Length; i++)
+            {
+                if (a[i] > b[i])
+                {
+                    c[i] = a[i];
+                }
+                else
+                {
+                    c[i] = b[i];
+                }
+                Console.WriteLine(c[i]);
+            }
+        }
+
+        static void Array54()
+        {
+            int[] a = { 2, 3, 4, 5, 6, 7, 8, 8, 9 };
+            int[] b = new int[a.Length];
+            int j = 0;
+            for(int i = 0; i < a.Length; i++)
+            {
+                if (a[i] % 2 == 0)
+                {
+                    b[j] = a[i];
+                    j++;
+                }
+            }
+            int i = 0;
+            int count=0;
+            while (b[i] != 0)
+            {
+                Console.WriteLine(b[i]);
+                count++;
+            }
+            Console.WriteLine(count);
+        }
 
             
     }

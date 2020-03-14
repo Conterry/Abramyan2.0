@@ -582,6 +582,42 @@ namespace Arrays
             }
         }
 
+        static void Array51()
+        {
+            int[] a = { 2, 4, 7, 3, 5, 8, 3 };
+            int[] b = { 6, 2, 4, 8, 3, 7, 7 };
+            int rez = 0;
+            for(int i=0; i<a.Length; i++)
+            {
+                rez = a[i];
+                a[i] = b[i];
+                b[i] = rez;
+            }
+            for(int i=0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(b[i]);
+            }
+        }
+
+        static void Array52()
+        {
+            int[] a = { 2, 6, 3, 4, 8, 4, 3, 7, 0, 5, 3, 2 };
+            int[] b = new int[a.Length];
+            for(int i=0; i<a.Length; i++)
+            {
+                if (a[i] < 5)
+                    b[i] = 2 * a[i];
+                else
+                    b[i] = a[i] / 2;
+                Console.WriteLine(b[i]);
+            }
+
+        }
+
 
             
     }

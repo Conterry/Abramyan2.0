@@ -6,30 +6,22 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            Array54();
+            Array37();
         }
 
+        #region Tasks18_26
         static void Array18()
         {
-            int count = 0;
             int[] a = { 3, 6, 3, 2, 4, 6, 5, 8, 3, 10 };
             for (int i = 0; i < a.Length; i++)
             {
                 if (a[i] < a[9])
                 {
                     Console.WriteLine(a[i]);
-                    break;
-                }
-                else
-                {
-                    count++;
+                    return;
                 }
             }
-            if (count >= 10)
-            {
-                Console.WriteLine(0);
-            }
-
+            Console.WriteLine(0);
         }
 
         static void Array19()
@@ -67,7 +59,7 @@ namespace Arrays
             {
                 sum += a[i];
             }
-            Console.WriteLine(sum / (l - k));
+            Console.WriteLine(sum / (float)(l - k));
         }
 
         static void Array22()
@@ -104,7 +96,17 @@ namespace Arrays
         static void Array24()
         {
             int[] a = { 3, 5, 7, 9, 11, 13 };
-            int[] arefm = new int[a.Length - 1];
+            int diff = a[1] - a[0];
+            for(int i=2; i<a.Length; i++)
+            {
+                if(a[i]-a[i-1]!=diff)
+                {
+                    Console.WriteLine(0);
+                    return;
+                }
+            }
+            Console.WriteLine( diff);
+            /*int[] arefm = new int[a.Length - 1];
             for (int i = 1; i < a.Length; i++)
             {
                 arefm[i - 1] = a[i] - a[i - 1];
@@ -121,7 +123,7 @@ namespace Arrays
             else
             {
                 Console.WriteLine(0);
-            }
+            }*/
         }
 
         static void Array25()
@@ -167,12 +169,14 @@ namespace Arrays
                 Console.WriteLine(i);
             }
         }
+        #endregion
         //==============================================
         static void Array27()
         {
             int[] a = { 3, -1, 5, -5, 6, -1, 6 };
             int i = 1;
-            while (Proverka(a[i - 1], a[i]))
+            //while (Proverka(a[i - 1], a[i]))
+            while (a[i - 1] * a[i] < 0)
             {
                 i++;
             }
@@ -199,28 +203,14 @@ namespace Arrays
         {
             int[] a = { 2, 6, 3, 6, 7, 2, 1, 7, 9, 4, 3 };
             int min = a[0];
-            if (a.Length % 2 == 0)
+            for (int i = 2; i < a.Length; i += 2)
             {
-                for (int i = 0; i < a.Length; i += 2)
+                if (a[i] < min)
                 {
-                    if (a[i] < min)
-                    {
-                        min = a[i];
-                    }
+                    min = a[i];
                 }
-                Console.WriteLine(min);
             }
-            else
-            {
-                for (int i = 0; i < a.Length - 1; i += 2)
-                {
-                    if (a[i] < min)
-                    {
-                        min = a[i];
-                    }
-                }
-                Console.WriteLine(min);
-            }
+            Console.WriteLine(min);
         }
 
         static void Array29()
@@ -384,11 +374,12 @@ namespace Arrays
             int count = 0;
             while (i < a.Length)
             {
-                while (a[i] < a[i + 1])
+                while ((i<a.Length-1) && (a[i] < a[i + 1]) )
                 {
                     i++;
                 }
                 count++;
+                i++;
             }
 
             Console.WriteLine(count);
@@ -401,11 +392,12 @@ namespace Arrays
             int count = 0;
             while (i < a.Length)
             {
-                while (a[i] > a[i + 1])
+                while ((i < a.Length - 1) && (a[i] > a[i + 1]))
                 {
                     i++;
                 }
                 count++;
+                i++;
             }
 
             Console.WriteLine(count);
@@ -446,18 +438,17 @@ namespace Arrays
         static void Array41()
         {
             int[] a = { 4, 7, 3, 5, 7, 4, 6, 8, 0, 8, 6, 3, 1, 4, 6 };
-            int max = 0, imax1 = 0, imax2 = 0;
+            int max = 0, imax1 = 0;
             for (int i = 0; i < a.Length - 1; i++)
             {
                 if (a[i] + a[i + 1] > max)
                 {
                     imax1 = i;
-                    imax2 = i + 1;
                     max = a[i] + a[i + 1];
                 }
             }
             Console.WriteLine(imax1);
-            Console.WriteLine(imax2 + 1);
+            Console.WriteLine(imax1 + 1);
         }
 
         static void Array42()
@@ -476,6 +467,25 @@ namespace Arrays
             Console.WriteLine(imax);
             Console.WriteLine(imax + 1);
         }
+
+        static void Array43()
+        {
+            int count = 0;
+            int[] a = { 2, 3, 4, 5, 6, 7, 8, 9 };
+            for(int i=0; i < a.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (a[i] != a[j])
+                    {
+                        count++;
+                    }
+                }
+            }
+            Console.WriteLine(count);
+        }
+
+
 
         static void Array44()
         {
@@ -609,11 +619,7 @@ namespace Arrays
             int[] b = new int[a.Length];
             for(int i=0; i<a.Length; i++)
             {
-                // a[i] = (a[i]<5? a*a[i]; a[i]/2)
-                if (a[i] < 5)
-                    b[i] = 2 * a[i];
-                else
-                    b[i] = a[i] / 2;
+                a[i] = (a[i]<5? 2*a[i]: a[i]/2);
                 Console.WriteLine(b[i]);
             }
 
@@ -637,7 +643,7 @@ namespace Arrays
                 Console.WriteLine(c[i]);
             }
         }
-
+        /*
         static void Array54()
         {
             int[] a = { 2, 3, 4, 5, 6, 7, 8, 8, 9 };
@@ -659,8 +665,6 @@ namespace Arrays
                 count++;
             }
             Console.WriteLine(count);
-        }
-
-            
+        }*/
     }
 }
